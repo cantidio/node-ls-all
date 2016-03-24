@@ -10,7 +10,7 @@ const cli = meow({
     $ ls-all ...folders
 
     Options
-    -r, --recursive
+    -r, --recurse
 
   Examples
     $ ls-all ./folder-1

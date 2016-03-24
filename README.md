@@ -8,7 +8,6 @@
 
 
 # LS-ALL
-> This is still in heavy[-metal] development.
 
 A simplistic deep file listing module for node (ls -Rla)
 
