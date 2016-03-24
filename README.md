@@ -33,7 +33,7 @@ Type: object
 
 ### Examples
 ```js
-const list = require('list-all');
+const list = require('ls-all');
 list([
   './src',
   './tests'
