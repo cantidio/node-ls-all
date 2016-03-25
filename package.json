@@ -25,7 +25,7 @@
     "ls-all": "./build/bin/ls-all.js"
   },
   "scripts": {
-    "clean": "rimraf build coverage",
+    "clean": "rimraf build .coverage .nyc_output",
     "build": "npm run clean && babel ./src -d build",
     "lint": "eslint src tests && jscs src tests",
     "start": "node --harmony ./src/bin/ls-all",
@@ -56,7 +56,8 @@
   },
   "dependencies": {
     "colors": "^1.1.2",
-    "meow": "^3.7.0"
+    "meow": "^3.7.0",
+    "tree-flatten": "^1.0.0"
   },
   "devDependencies": {
     "ava": "^0.13.0",

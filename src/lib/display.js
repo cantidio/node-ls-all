@@ -27,7 +27,7 @@ function printFile(file, spaces) {
 module.exports = function displayFiles(files, spaces) {
   files.forEach((file)=> {
     printFile(file, spaces);
-    if (file.mode.dir) {
+    if (file.files && file.files.length > 0) {
       displayFiles(file.files, spaces + identSize);
     }
   });

@@ -28,6 +28,13 @@ test('it should return a deep list of dir files when running with recurse', (t) 
   });
 });
 
+test('it should return a flat list of dir files when running with flatten', (t) => {
+  const dirs = [helper.rootDir];
+  return list(dirs, { recurse:true, flatten: true }).then((files)=> {
+    t.same(files, helper.listFlat);
+  });
+});
+
 test('it should throw an error if dir does not exist', (t) => {
   const dirs = ['INVALID'];
   t.throws(list(dirs, {}));

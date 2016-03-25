@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const joinPath = require('path').join;
+const flatten = require('tree-flatten');
 const Mode = require('./mode');
 
 function _readDir(dir) {
@@ -48,8 +49,8 @@ function _listFiles(path, options) {
       const mode = file.mode;
       const path = file.path;
       return {
-        mode,
         path,
+        mode,
         files
       };
     });
@@ -57,8 +58,17 @@ function _listFiles(path, options) {
 }
 
 function list(paths, options) {
-  const promises = paths.map((path)=> _listFiles(path, options));
-  return Promise.all(promises);
+  const opts = Object.assign({}, options);
+  const promises = paths.map((path)=> _listFiles(path, opts));
+  return Promise.all(promises).then((files)=> {
+    if (opts.flatten) {
+      return files
+        .map((root)=> flatten(root, 'files'))
+        .reduce((a, b)=> a.concat(b), []);
+    }
+
+    return files;
+  });
 }
 
 module.exports = list;

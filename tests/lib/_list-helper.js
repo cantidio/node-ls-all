@@ -49,6 +49,16 @@ const listRoot = [{
   ]
 }];
 
+const listFlat = [
+  { path: 'dir-0', mode: new Mode(statSync('dir-0').mode) },
+  { path: 'dir-0/file-0', mode: new Mode(statSync('dir-0/file-0').mode) },
+  { path: 'dir-0/file-1', mode: new Mode(statSync('dir-0/file-1').mode) },
+  { path: 'dir-0/dir-0', mode: new Mode(statSync('dir-0/dir-0').mode) },
+  { path:'dir-0/dir-0/file-0', mode: new Mode(statSync('dir-0/dir-0/file-0').mode) },
+  { path:'dir-0/dir-0/file-1', mode: new Mode(statSync('dir-0/dir-0/file-1').mode) },
+  { path:'dir-0/dir-0/dir-0', mode: new Mode(statSync('dir-0/dir-0/dir-0').mode) }
+];
+
 const listDeep = [{
   path: 'dir-0',
   mode: new Mode(statSync('dir-0').mode),
@@ -88,5 +98,6 @@ module.exports = {
   statSync,
   listRoot,
   listDeep,
+  listFlat,
   rootDir: Object.keys(dirTree)[0]
 };

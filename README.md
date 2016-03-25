@@ -18,9 +18,23 @@ A simplistic deep file listing module for node (ls -Rla)
 ## Usage
 ### CLI
 ```
-  ls-all -r ./dir-1 ./dir-2 ./dir-3/*
+  ls-all --help
 ```
-List all files in a dir. Recursive optional.
+```
+  Usage
+    $ ls-all [options] ...folders
+
+    Options
+    -f, --flatten
+    -r, --recurse
+
+  Examples
+    $ ls-all ./folder-1 ./folder-2
+      folder-1:
+        file-1
+        file-2
+```
+List all files in a dir. Recursive optional. Flatten optional.
 
 ### API
 #### list(paths, [options])
@@ -29,6 +43,7 @@ Returns a promise with an array of files.
 ##### options
 Type: object
 * recurse: true|false
+* flatten: true|false
 
 ### Examples
 ```js

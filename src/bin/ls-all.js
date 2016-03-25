@@ -7,22 +7,25 @@ const display = require('../lib/display');
 const cli = meow({
   help: `
   Usage
-    $ ls-all ...folders
+    $ ls-all [options] ...folders
 
     Options
+    -f, --flatten
     -r, --recurse
 
   Examples
-    $ ls-all ./folder-1
-      > folder-1:
-      >   file-1
-      >   file-2
+    $ ls-all ./folder-1 ./folder-2
+      folder-1:
+        file-1
+        file-2
 ` }, {
   alias: {
-    r: 'recurse'
+    r: 'recurse',
+    f: 'flatten'
   },
   default: {
-    r: false
+    r: false,
+    f: false
   }
 });
 
