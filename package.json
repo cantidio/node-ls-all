@@ -1,6 +1,6 @@
 {
   "name": "ls-all",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A simplistic deep file listing module for node (ls -Rla)",
   "author": "Cantidio Fontes <aniquilatorbloody@gmail.com>",
   "license": "MIT",
