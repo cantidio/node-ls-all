@@ -7,7 +7,7 @@ test('it should be exec', (t) => {
 });
 
 test('it should be dir', (t) => {
-  const mode = new Mode(16877);
+  const mode = new Mode(1612877);
   t.is(mode.dir, true);
 });
 
